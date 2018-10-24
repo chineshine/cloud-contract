@@ -14,3 +14,8 @@ spring cloud contract samples
 [INFO] Installing E:\workspace\photon\test\cloud-contract\producer\pom.xml to E:\workspace\repository\c\s\contract\producer\0.0.1-SNAPSHOT\producer-0.0.1-SNAPSHOT.pom
 [INFO] Installing E:\workspace\photon\test\cloud-contract\producer\target\producer-0.0.1-SNAPSHOT-stubs.jar to E:\workspace\repository\c\s\contract\producer\0.0.1-SNAPSHOT\producer-0.0.1-SNAPSHOT-stubs.jar
 ```  
+
+## consumer
+契约的消费端  
+将生成的 `stub` 包引入项目中,`eclipse` 利用 `build path`  
+在 `src/main/test` 中,执行运行测试类  
