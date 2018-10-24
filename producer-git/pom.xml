@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>c.s.contract</groupId>
+		<artifactId>cloud-contract</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>producer-git</artifactId>
+	
+	<properties>
+		<spring-cloud-contract.version>2.0.2.BUILD-SNAPSHOT</spring-cloud-contract.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- SPRING CLOUD CONTRACT -->
+			<plugin>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+				<version>${spring-cloud-contract.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<contractsRepositoryUsername>chenxiang.pan@newtouch.cn</contractsRepositoryUsername>
+					<contractsRepositoryPassword>xiang1991</contractsRepositoryPassword>
+					<contractsRepositoryUrl>git://https://code.newtouch.com/taichi/cloud-contract.git</contractsRepositoryUrl>
+					<contractDependency>
+						<groupId>${project.groupId}</groupId>
+						<artifactId>${project.artifactId}</artifactId>
+						<version>${project.version}</version>
+					</contractDependency>
+					<!-- The mode can't be classpath -->
+					<contractsMode>REMOTE</contractsMode>
+					<basePackageForTests>c.s.producer</basePackageForTests>
+					<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<!-- By default we will not push the stubs back to SCM,
+							you have to explicitly add it as a goal -->
+							<goal>pushStubsToScm</goal>
+						</goals>
+					</execution>
+				</executions>
+				</configuration> 
+			</plugin>
+
+		</plugins>
+	</build>
+	
+</project>

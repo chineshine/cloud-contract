@@ -1,0 +1,18 @@
+{
+  "id" : "ca20ed2c-2556-47b2-aa2c-86675f461195",
+  "request" : {
+    "urlPath" : "/getUserinfo",
+    "method" : "GET",
+    "queryParameters" : {
+      "username" : {
+        "equalTo" : "zhangsan"
+      }
+    }
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "ok",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "ca20ed2c-2556-47b2-aa2c-86675f461195"
+}
