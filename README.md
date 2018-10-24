@@ -19,3 +19,8 @@ spring cloud contract samples
 契约的消费端  
 将生成的 `stub` 包引入项目中,`eclipse` 利用 `build path`  
 在 `src/main/test` 中,执行运行测试类  
+
+## producer-git
+契约的生产者  
+利用 `git` 方式远程存储和下载 `stub` 包  
+**未试验成功,待验证**
