@@ -49,8 +49,8 @@
 				<version>${spring-cloud-contract.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<contractsRepositoryUsername>chenxiang.pan@newtouch.cn</contractsRepositoryUsername>
-					<contractsRepositoryPassword>xiang1991</contractsRepositoryPassword>
+					<!-- <contractsRepositoryUsername>**</contractsRepositoryUsername>
+					<contractsRepositoryPassword>**</contractsRepositoryPassword> -->
 					<contractsRepositoryUrl>git://https://code.newtouch.com/taichi/cloud-contract.git</contractsRepositoryUrl>
 					<contractDependency>
 						<groupId>${project.groupId}</groupId>
