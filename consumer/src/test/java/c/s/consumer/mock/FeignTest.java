@@ -29,8 +29,8 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import c.s.consumer.beer.Person;
-import c.s.consumer.beer.Response;
+import c.s.consumer.model.Person;
+
 
 /**
  *
@@ -59,10 +59,10 @@ public class FeignTest {
 	@Test
 	// post
 	public void test1() {
-		ResponseEntity<Response> responseEntity = testRestTemplate.exchange(RequestEntity.post(URI.create("http://localhost:" + producerPort + "/check")).
+		ResponseEntity<String> responseEntity = testRestTemplate.exchange(RequestEntity.post(URI.create("http://localhost:" + producerPort + "/check")).
 				contentType(MediaType.APPLICATION_JSON).
-				body(new Person("marcin", 17)), Response.class);
-		System.out.println(responseEntity.getBody().status);
+				body(new Person("mary", "female")), String.class);
+		System.out.println(responseEntity.getBody());
 	}
 	
 	@Test
@@ -95,9 +95,9 @@ public class FeignTest {
 	public void test4() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		HttpEntity<Person> httpEntity = new HttpEntity<Person>(new Person("marcin", 22),headers);
-		ResponseEntity<Response> responseEntity = testRestTemplate.exchange(getUri("check"), HttpMethod.POST, httpEntity, Response.class);
-		System.out.println(responseEntity.getBody().status);
+		HttpEntity<Person> httpEntity = new HttpEntity<Person>(new Person("marcin", "male"),headers);
+		ResponseEntity<String> responseEntity = testRestTemplate.exchange(getUri("check"), HttpMethod.POST, httpEntity, String.class);
+		System.out.println(responseEntity.getBody());
 	}
 	
 	// get 第三种写法

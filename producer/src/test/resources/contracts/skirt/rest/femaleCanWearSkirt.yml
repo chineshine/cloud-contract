@@ -1,0 +1,15 @@
+description: |
+  the one who is a female can wear the skirt
+request: 
+  method: POST
+  url: /check
+  headers: 
+    Content-Type: application/json
+  body: 
+    sex: female
+response: 
+  status: 200
+  body: "ok"
+  headers:
+    Content-Type: application/json;charset=UTF-8
+  

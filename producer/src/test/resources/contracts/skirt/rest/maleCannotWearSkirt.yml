@@ -1,0 +1,15 @@
+description: |
+  the one who is a male can not wear the skirt
+request: 
+  method: POST
+  url: /check
+  headers: 
+    Content-Type: application/json
+  body: 
+    sex: male
+response: 
+  status: 200
+  body: "not_ok"
+  headers:
+    Content-Type: application/json;charset=UTF-8
+  

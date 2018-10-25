@@ -50,13 +50,12 @@
 				<extensions>true</extensions>
 				<configuration>
 					<packageWithBaseClasses>c.s.producer</packageWithBaseClasses>
-					<baseClassForTests>c.s.producer.MvcTest</baseClassForTests>
 				<!-- 
-					<packageWithBaseClasses>com.example</packageWithBaseClasses>
+					<baseClassForTests>c.s.producer.controller.HelloControllerBase</baseClassForTests>
 					<baseClassMappings>
 						<baseClassMapping>
-							<contractPackageRegex>.*intoxication.*</contractPackageRegex>
-							<baseClassFQN>com.example.intoxication.BeerIntoxicationBase</baseClassFQN>
+							<contractPackageRegex>.*base.*</contractPackageRegex>
+							<baseClassFQN>c.s.producer.ProducerBase</baseClassFQN>
 						</baseClassMapping>
 					</baseClassMappings>
 				-->
