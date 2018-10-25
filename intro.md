@@ -46,6 +46,14 @@ https://cloud.spring.io/spring-cloud-contract/multi/multi__contract_dsl.html#con
 ```
 
 ### 流程4 -- 消费者
+`pom.xml` 中引入:
+```
+  <dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-contract-stub-runner</artifactId>
+    <scope>test</scope>
+  </dependency>
+```
 在消费者端编写测试用例进行测试
 
 ### 总结
