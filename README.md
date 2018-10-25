@@ -24,3 +24,15 @@ spring cloud contract samples
 契约的生产者  
 利用 `git` 方式远程存储和下载 `stub` 包  
 **未试验成功,待验证**
+
+## 参考地址
+#### `maven` 插件参考地址   
+https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/index.html  
+#### `spring` 官方的简单介绍
+https://cloud.spring.io/spring-cloud-contract/
+#### 官方文档
+http://cloud.spring.io/spring-cloud-contract/2.0.x/single/spring-cloud-contract.html
+#### `spring gitHub demo`
+https://github.com/spring-cloud-samples/spring-cloud-contract-samples
+#### 官方文档相关 `DSL` 讲解
+https://cloud.spring.io/spring-cloud-contract/multi/multi__contract_dsl.html
