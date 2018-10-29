@@ -1,0 +1,9 @@
+spring: 
+  cloud: 
+    contract: 
+      stubs: 
+        ids: c.s.contract:producer-git:0.0.1-SNAPSHOT
+        git: 
+          url: git://https://code.newtouch.com/taichi/cloud-contract.git
+          username: git-user
+          password: git-pass

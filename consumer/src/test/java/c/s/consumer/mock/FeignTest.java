@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.http.client.utils.URIBuilder;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,7 @@ public class FeignTest {
 	
 	@Test
 	// post
+	@Ignore
 	public void test1() {
 		ResponseEntity<String> responseEntity = testRestTemplate.exchange(RequestEntity.post(URI.create("http://localhost:" + producerPort + "/check")).
 				contentType(MediaType.APPLICATION_JSON).
@@ -65,14 +67,17 @@ public class FeignTest {
 		System.out.println(responseEntity.getBody());
 	}
 	
-	@Test
 	//get  无参
+	@Test
+	@Ignore
 	public void test2() {
 		ResponseEntity<String> responseEntity = testRestTemplate.exchange(RequestEntity.get(getUri("foo")).build(), String.class);
 		System.out.println(responseEntity.getBody());
 	}
 	// get 传参
-	@Test public void test3() {
+	@Test 
+	@Ignore
+	public void test3() {
 		Map<String, Object> map = new HashMap<>();
 		map.put("username", "zhangsan");
 		HttpEntity<Map<String,Object>> requestEntity = new HttpEntity<Map<String,Object>>(map);
@@ -82,7 +87,9 @@ public class FeignTest {
 	}
 	
 	//get 传参  第二种写法
-	@Test public void test5() {
+	@Test 
+	@Ignore
+	public void test5() {
 		Map<String, Object> map =new HashMap<>();
 		map.put("username", "zhangsan");
 		String uri = "http://localhost:" + producerPort + "/getUserinfo?username={username}";
@@ -90,8 +97,9 @@ public class FeignTest {
 		System.out.println(responseEntity.getBody());
 	}
 	
-	@Test
 	//post 另一种写法
+	@Test
+	@Ignore
 	public void test4() {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -101,7 +109,9 @@ public class FeignTest {
 	}
 	
 	// get 第三种写法
-	@Test public void test6() throws URISyntaxException {
+	@Test 
+	@Ignore
+	public void test6() throws URISyntaxException {
 		URIBuilder builder = new URIBuilder(this.getUri("getUserinfo"));
 		builder.addParameter("username", "zhangsan");
 		URI uri = builder.build();
