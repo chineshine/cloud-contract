@@ -37,7 +37,7 @@ spring cloud contract samples
 契约的生产者  
 利用 `git` 方式远程存储和下载 `stub` 包  
 完整例子参考: [pom.xml](producer-git/pom.xml)  
-以及 [FeignGitTest.java](consumer\src\test\java\c\s\consumer\mock\FeignGitTest.java)
+以及 [FeignGitTest.java](consumer/src/test/java/c/s/consumer/mock/FeignGitTest.java)
 
 ## 参考地址
 #### `maven` 插件参考地址   
