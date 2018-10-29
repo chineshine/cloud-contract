@@ -1,8 +1,0 @@
-description: |
-  this is the description
-request: 
-  method: GET
-  url: /foo
-response: 
-  status: 200
-  body: "ok"

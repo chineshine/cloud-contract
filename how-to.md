@@ -62,3 +62,43 @@
   假设契约写在 .*producer.* 的文件夹下面
   匹配正则相对应的包名下面的 基类 ProducerBase
 ```
+
+
+## 关于 pushStubsToScm
+配置
+```
+<configuration>
+      ...
+        <contractsMode>REMOTE</contractsMode>
+        <contractsRepositoryUsername>git-username</contractsRepositoryUsername>
+        <contractsRepositoryPassword>git-password</contractsRepositoryPassword>
+        <contractsRepositoryUrl>git://https://git-remote-address.git</contractsRepositoryUrl>
+        <contractDependency>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>${project.artifactId}</artifactId>
+          <version>${project.version}</version>
+        </contractDependency>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>pushStubsToScm</goal>
+            </goals>
+          </execution>
+        </executions>
+      </configuration>
+```
+注意点:  
+1) `contractsRepositoryUrl` 默认有个前缀 `git://` ,无论是 `http/https` 或 `ssh` 地址该前缀都 **必须**  
+2) 默认 `pushStubsToScm` 在执行过程中不会执行,需要手动执行  
+3) `pushStubsToScm` 完整执行命令:
+```
+  # 注意使用版本,此处是 2.0.1.RELEASE
+  org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:pushStubsToScm
+```
+4) `pushStubsToScm` 默认会先从远程 download,如果远程是初始化仓库--报错  
+    先要把上述配置注掉,然后执行 :
+    ```
+      org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:convert
+    ```
+    会在 `target` 下生成 `stub`,然后打开注释,执行 `pushStubsToScm`,才能上传远程仓库
