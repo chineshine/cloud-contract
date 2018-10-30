@@ -37,7 +37,18 @@ ${project.basedir}/src/test/resources/contracts
 # 该位置可通过插件配置参数修改 -> contractsDirectory
 ```
 如果是 `REMOTE` 模式,则必须为 `yml` 配置一个远程仓库  
-
+仓库目录形式:
+```
+  META-INF/<group-id>/<artifact-id>/<version>/contracts  
+  
+  group-id: 对应 maven 项目的 groupId
+  artifact-id: 对应 maven 项目的 artifactId
+  version: 对应 maven 项目的版本
+```
+`yml` 文件具体命名方式
+```
+  业务名称/rest/实际请求.yml
+```
 
 ### 流程3 -- 生产者
 利用编写的 `yml` 生成测试,测试生产者端的逻辑
