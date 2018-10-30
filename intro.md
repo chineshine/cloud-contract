@@ -28,13 +28,16 @@ https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin
 ```
 
 ### 流程2 -- 生产者
-`yml` 必须放在该位置:  
-```
-  ${project.basedir}/src/test/resources/contracts
-  # 该位置可通过插件配置参数修改 -> contractsDirectory
-```
 编写 `yml` 文件,参考地址:  
 https://cloud.spring.io/spring-cloud-contract/multi/multi__contract_dsl.html#contract-dsl-http-top-level-elements
+
+`yml` 必须放在该位置:  
+```
+${project.basedir}/src/test/resources/contracts
+# 该位置可通过插件配置参数修改 -> contractsDirectory
+```
+如果是 `REMOTE` 模式,则必须为 `yml` 配置一个远程仓库  
+
 
 ### 流程3 -- 生产者
 利用编写的 `yml` 生成测试,测试生产者端的逻辑
