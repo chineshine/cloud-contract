@@ -89,7 +89,7 @@
       </configuration>
 ```
 注意点:  
-1) `contractsRepositoryUrl` 默认有个前缀 `git://` ,无论是 `http/https` 或 `ssh` 地址该前缀都 **必须**  
+1) `contractsRepositoryUrl` 默认有个前缀 `git://` ,无论是 `http/https` 或 `ssh` 地址,该前缀都 **必须**  
 2) 默认 `pushStubsToScm` 在执行过程中不会执行,需要手动执行  
 3) `pushStubsToScm` 完整执行命令:
 ```
@@ -101,4 +101,8 @@
     ```
       org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:convert
     ```
-    会在 `target` 下生成 `stub`,然后打开注释,执行 `pushStubsToScm`,才能上传远程仓库
+    会在 `target` 下生成 `stubs`,然后打开注释,执行 `pushStubsToScm`,才能上传远程仓库  
+    `pushStubsToScm` 默认会上传 `target/stubs` 内的东西  
+    注意: 远程消费者默认使用与 `contracts` 目录统计的 `mappings` 目录内的文件  
+         如果远程只写了 `contracts` 目录中的契约,需要在生产者把契约 `mvn install` 下  
+         然后再 `pushStubsToScm`,保证仓库有对应的 `mappings` 目录,才能供远程消费者使用
