@@ -1,4 +1,5 @@
 #spring cloud contract 知识点
+
 ## 生成测试
 生成测试类的命令
 ```
@@ -109,3 +110,31 @@
 6) 远程消费者默认使用与 `contracts` 目录同级的 `mappings` 目录内的文件  
     如果远程只写了 `contracts` 目录中的契约,需要在生产者把契约 `mvn install` 下  
     然后再 `pushStubsToScm`,保证仓库有对应的 `mappings` 目录,才能供远程消费者使用
+
+## `REMOTE` 模式 消费者端用到的属性
+插件属性:
+| property name | type    | default | description|
+|---------------|---------|---------|------------|
+| git.branch    | plugin  | master  | git 上的分支|
+| git.username  | plugin  |   | 连接 git 的 用户名称|
+| git.password  | plugin  |   | 连接 git 的密码 |
+| git.no-of-attempts        | plugin | 10 | 每次 Push 到远程的 commit 数量|
+| git.wait-between-attempts | plugin | 1000 | 每次 push 之间的等待时间|
+
+系统属性:
+| property name | type    | default  | description|
+|---------------|---------|----------|------------|
+| stubrunner.properties.git.branch   | system | master  | git 上的分支|
+| stubrunner.properties.git.username | system |   | 连接 git 的 用户名称|
+| stubrunner.properties.git.password | system |   | 连接 git 的密码 |
+| stubrunner.properties.git.no-of-attempts | system | 10  | 每次 Push 到远程的 commit 数量|
+| stubrunner.properties.git.wait-between-attempts | system | 1000 | 每次 push 之间的等待时间|
+
+环境变量:
+| property name | type    | default  | description|
+|---------------|---------|----------|------------|
+| STUBRUNNER_PROPERTIES_GIT_BRANCH   | env | master  | git 上的分支|
+| STUBRUNNER_PROPERTIES_GIT_USERNAME | env |   | 连接 git 的 用户名称|
+| STUBRUNNER_PROPERTIES_GIT_PASSWORD | env |   | 连接 git 的密码 |
+| STUBRUNNER_PROPERTIES_GIT_NO_OF_ATTEMPTS | env | 10  | 每次 Push 到远程的 commit 数量|
+| STUBRUNNER_PROPERTIES_GIT_WAIT_BETWEEN_ATTEMPTS | env | 1000  | 每次 push 之间的等待时间|
