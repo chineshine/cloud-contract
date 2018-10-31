@@ -94,11 +94,11 @@
 1) `contractsRepositoryUrl` 默认有个前缀 `git://` ,无论是 `http/https` 或 `ssh` 地址,该前缀都 **必须**  
 2) 默认 `pushStubsToScm` 在执行过程中不会执行,需要手动执行  
 3) `pushStubsToScm` 完整执行命令:
+   **一定** 要执行完整命令,如果只是执行 `mvn pushStubsToScm`,报错  
 ```
   # 注意使用版本,此处是 2.0.1.RELEASE
   org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:pushStubsToScm
 ```
-一定要执行完整命令,如果只是执行 `mvn pushStubsToScm`,报错  
 4) `pushStubsToScm` 默认会先从远程 download,如果远程是初始化仓库--报错  
     先要把上述配置注掉,然后执行 :
     ```
