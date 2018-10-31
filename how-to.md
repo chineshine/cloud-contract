@@ -98,13 +98,14 @@
   # 注意使用版本,此处是 2.0.1.RELEASE
   org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:pushStubsToScm
 ```
+一定要执行完整命令,如果只是执行 `mvn pushStubsToScm`,报错  
 4) `pushStubsToScm` 默认会先从远程 download,如果远程是初始化仓库--报错  
     先要把上述配置注掉,然后执行 :
     ```
       org.springframework.cloud:spring-cloud-contract-maven-plugin:2.0.1.RELEASE:convert
     ```
     会在 `target` 下生成 `stubs`,然后打开注释,执行 `pushStubsToScm`,才能上传远程仓库  
-    `pushStubsToScm` 默认会上传 `target/stubs` 内的东西  
-5) 远程消费者默认使用与 `contracts` 目录同级的 `mappings` 目录内的文件  
+5) `pushStubsToScm` 默认会上传 `target/stubs` 内的东西  
+6) 远程消费者默认使用与 `contracts` 目录同级的 `mappings` 目录内的文件  
     如果远程只写了 `contracts` 目录中的契约,需要在生产者把契约 `mvn install` 下  
     然后再 `pushStubsToScm`,保证仓库有对应的 `mappings` 目录,才能供远程消费者使用
