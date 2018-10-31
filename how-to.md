@@ -63,6 +63,7 @@
   假设契约写在 .*producer.* 的文件夹下面
   匹配正则相对应的包名下面的 基类 ProducerBase
 ```
+生成的测试类不会继承基类  
 
 
 ## 关于 pushStubsToScm
@@ -104,6 +105,6 @@
     ```
     会在 `target` 下生成 `stubs`,然后打开注释,执行 `pushStubsToScm`,才能上传远程仓库  
     `pushStubsToScm` 默认会上传 `target/stubs` 内的东西  
-    注意: 远程消费者默认使用与 `contracts` 目录统计的 `mappings` 目录内的文件  
-         如果远程只写了 `contracts` 目录中的契约,需要在生产者把契约 `mvn install` 下  
-         然后再 `pushStubsToScm`,保证仓库有对应的 `mappings` 目录,才能供远程消费者使用
+5) 远程消费者默认使用与 `contracts` 目录同级的 `mappings` 目录内的文件  
+    如果远程只写了 `contracts` 目录中的契约,需要在生产者把契约 `mvn install` 下  
+    然后再 `pushStubsToScm`,保证仓库有对应的 `mappings` 目录,才能供远程消费者使用
