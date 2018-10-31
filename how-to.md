@@ -24,8 +24,9 @@
 所有根据 `yml` 文件生成的测试类都会继承该类  
 如果该类只指定了一个 `controller`  
 则除了对应的 `controller` 测试会通过外,其余都会报错  
-可以通过 `exclude` 排除不想生成测试类的 `yml` 文件
-当然也可以在基类中注入 `webApplicationContext` ,运行时激活所有 `controller`
+可以通过 `exclude` 排除不想生成测试类的 `yml` 文件  
+当然也可以在基类中注入 `webApplicationContext` ,运行时激活所有 `controller`  
+基类写法参考 `producer` 项目
 
 2) `packageWithBaseClasses`
 ```
