@@ -113,6 +113,7 @@
 
 ## `REMOTE` 模式 消费者端用到的属性
 插件属性:
+
 | property name | type    | default | description|
 |---------------|---------|---------|------------|
 | git.branch    | plugin  | master  | git 上的分支|
@@ -122,6 +123,7 @@
 | git.wait-between-attempts | plugin | 1000 | 每次 push 之间的等待时间|
 
 系统属性:
+
 | property name | type    | default  | description|
 |---------------|---------|----------|------------|
 | stubrunner.properties.git.branch   | system | master  | git 上的分支|
@@ -131,6 +133,7 @@
 | stubrunner.properties.git.wait-between-attempts | system | 1000 | 每次 push 之间的等待时间|
 
 环境变量:
+
 | property name | type    | default  | description|
 |---------------|---------|----------|------------|
 | STUBRUNNER_PROPERTIES_GIT_BRANCH   | env | master  | git 上的分支|
