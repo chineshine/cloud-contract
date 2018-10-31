@@ -41,7 +41,7 @@
 每个基类的命名规则:
 ```
   假设契约写在 src/test/resources/contracts/skirt/rest/*.yml
-  spring 会去寻找 最后两个文件+Base为名称 匹配的基类 即基类名为: skirtRestBase
+  spring 会去寻找 最后两个文件夹名称+Base 为名称 匹配的基类 即基类名为: skirtRestBase
 ```
 所有生成的测试类都会继承与之相匹配的基类
 
