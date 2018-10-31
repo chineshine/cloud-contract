@@ -93,7 +93,7 @@
 注意点:  
 1) `contractsRepositoryUrl` 默认有个前缀 `git://` ,无论是 `http/https` 或 `ssh` 地址,该前缀都 **必须**  
 2) 默认 `pushStubsToScm` 在执行过程中不会执行,需要手动执行  
-3) `pushStubsToScm` 完整执行命令:
+3) `pushStubsToScm` 完整执行命令:  
    **一定** 要执行完整命令,如果只是执行 `mvn pushStubsToScm`,报错  
 ```
   # 注意使用版本,此处是 2.0.1.RELEASE

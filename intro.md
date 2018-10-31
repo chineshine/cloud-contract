@@ -1,5 +1,5 @@
 # spring-Cloud-contract 介绍
-### 流程1 --生产者
+### 流程1 -- 生产者
 #### 1.引入包
 ```
 <dependency>
@@ -37,21 +37,23 @@ ${project.basedir}/src/test/resources/contracts
 # 该位置可通过插件配置参数修改 -> contractsDirectory
 ```
 如果是 `REMOTE` 模式,则必须为 `yml` 配置一个远程仓库  
-仓库目录形式:
+远程模式配置参考项目 `producer-git`  
+远程仓库目录形式:
 ```
   META-INF/<group-id>/<artifact-id>/<version>/contracts  
-  
+
   group-id: 对应 maven 项目的 groupId
   artifact-id: 对应 maven 项目的 artifactId
   version: 对应 maven 项目的版本
 ```
 `yml` 文件具体命名方式
 ```
+  # / 代表一个文件夹或目录
   业务名称/rest/实际请求.yml
 ```
 
 ### 流程3 -- 生产者
-利用编写的 `yml` 生成测试,测试生产者端的逻辑
+利用编写的 `yml` 生成测试类,测试生产者端的逻辑
 ```
   mvn generate-test-sources
 ```
@@ -59,10 +61,16 @@ ${project.basedir}/src/test/resources/contracts
 ```
   mvn test
 ```
-注意: 生成的测试类的位置在
+注意:  
+1) 生成的测试类的位置在
 ```
   ${project}/target/generated-test-sources
 ```
+2) 测试生成的测试类注意对应 `controller` 的传参类型  
+   如果在 `yml` 文件中定义了 `request.headers.contentType` 或 `response.headers.contentType`  
+   则在对应 `controller` 的对应方法的 `@*Mapping`(如 `@PostMapping`,`@GetMapping` 等)  
+   需要添加参数 `consumes`,`produces`  
+   `consumes` 对应 `request`, `produces` 对应 `response`  
 
 ### 流程4 -- 消费者
 `pom.xml` 中引入:
