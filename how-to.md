@@ -1,4 +1,4 @@
-#spring cloud contract 知识点
+# spring cloud contract 知识点
 
 ## 生成测试
 生成测试类的命令
@@ -141,3 +141,16 @@
 | STUBRUNNER_PROPERTIES_GIT_PASSWORD | env |   | 连接 git 的密码 |
 | STUBRUNNER_PROPERTIES_GIT_NO_OF_ATTEMPTS | env | 10  | 每次 Push 到远程的 commit 数量|
 | STUBRUNNER_PROPERTIES_GIT_WAIT_BETWEEN_ATTEMPTS | env | 1000  | 每次 push 之间的等待时间|
+
+## 关于 `maven` 仓库的一些配置
+可通过系统属性或环境变量设置
+```
+  # 值为 maven 本地仓库自定义位置--路径(path)
+  maven.repo.local
+  # maven 用户设置的 setting.xml 路径 -- user-setting
+  org.apache.maven.user-settings  
+  # maven 全局设置的 setting.xml 路径 --global setting
+  org.apache.maven.global-settings
+```
+系统属性可通过 `application.yml` 文件设置或 `mvn` 命令运行时通过 `-D` 参数指定  
+以上参数由官方提供,但未作测试
