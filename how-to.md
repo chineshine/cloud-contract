@@ -143,7 +143,7 @@
 | STUBRUNNER_PROPERTIES_GIT_WAIT_BETWEEN_ATTEMPTS | env | 1000  | 每次 push 之间的等待时间|
 
 ## 关于 `maven` 仓库的一些配置
-可通过系统属性或环境变量设置:
+下列属性可通过系统属性或环境变量设置:
 ```
   # 值为 maven 本地仓库自定义位置--路径(path)
   maven.repo.local
@@ -154,5 +154,5 @@
   # maven 全局设置的 setting.xml 路径 --global setting
   org.apache.maven.global-settings
 ```
-系统属性可通过 `application.yml` 文件设置或 `mvn` 命令运行时通过 `-D` 参数指定  
+系统属性可通过 `application.yml` 文件设置(不一定起效)或 `mvn` 命令运行时通过 `-D` 参数指定  
 以上参数由官方提供,但未作测试

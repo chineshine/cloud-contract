@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>producer-git</artifactId>
-	
+
 	<properties>
 		<spring-cloud-contract.version>2.0.2.BUILD-SNAPSHOT</spring-cloud-contract.version>
 	</properties>
@@ -34,7 +34,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -53,8 +53,8 @@
 					<basePackageForTests>c.s.producer</basePackageForTests>
 					<packageWithBaseClasses>c.s.producer</packageWithBaseClasses>
 					<contractsMode>REMOTE</contractsMode>
-					<contractsRepositoryUsername>git-user</contractsRepositoryUsername>
-					<contractsRepositoryPassword>git-pass</contractsRepositoryPassword> 
+					<contractsRepositoryUsername>****</contractsRepositoryUsername>
+					<contractsRepositoryPassword>****</contractsRepositoryPassword> 
 					<contractsRepositoryUrl>git://https://code.newtouch.com/taichi/cloud-contract.git</contractsRepositoryUrl>
 					<contractDependency>
 						<groupId>${project.groupId}</groupId>
@@ -72,10 +72,10 @@
 						</goals>
 					</execution>
 				</executions>
-				</configuration> 
+				</configuration>
 			</plugin>
 
 		</plugins>
 	</build>
-	
+
 </project>

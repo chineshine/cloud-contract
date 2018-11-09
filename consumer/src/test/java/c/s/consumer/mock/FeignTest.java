@@ -41,7 +41,7 @@ import c.s.consumer.model.Person;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @DirtiesContext
-@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.CLASSPATH, ids = "c.s.contract:producer")
+@AutoConfigureStubRunner(stubsMode = StubRunnerProperties.StubsMode.LOCAL, ids = "c.s.contract:producer")
 public class FeignTest {
 
 	@StubRunnerPort("producer")
@@ -69,7 +69,7 @@ public class FeignTest {
 	
 	//get  无参
 	@Test
-	@Ignore
+//	@Ignore
 	public void test2() {
 		ResponseEntity<String> responseEntity = testRestTemplate.exchange(RequestEntity.get(getUri("foo")).build(), String.class);
 		System.out.println(responseEntity.getBody());
