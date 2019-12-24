@@ -8,7 +8,12 @@ spring cloud contract 是用于 spring cloud 微服务项目中,spring-feign 的
 - 场景  
 如 spring cloud 微服务项目中,A项目利用 spring-feign 调用了 B项目的接口,此时在开发过程中,A项目要测试,然而B项目并未启动,那么A项目在跑测试类的时候就会报错,此时就需要用到 spring-cloud-contract
 - 概念解析  
-spring-cloud-contract 将提供接口的B项目称之为生产者(producer),同时将调用接口的A项目称之为消费者(consumer),开发人员需要为为每一个被调用的接口编写票根(stub),生产者通过票根(stub)生成契约(contract);消费者根据契约(contract)调用接口(restful接口).注意通过契约调用的接口,返回的值是固定值,只供测试的时候使用
+spring-cloud-contract 将提供接口的B项目称之为生产者(producer)  
+同时将调用接口的A项目称之为消费者(consumer)  
+开发人员需要为为每一个被调用的接口编写票根(stub)  
+生产者通过票根(stub)生成契约(contract)  
+消费者根据契约(contract)调用接口(restful接口)  
+注意通过契约调用的接口,返回的值是固定值,只供测试的时候使用
 
 ## 三个 sample 的作用
 - producer  
