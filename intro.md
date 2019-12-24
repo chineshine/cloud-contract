@@ -13,19 +13,25 @@
 插件配置属性参考地址:  
 https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/convert-mojo.html
 ```
+  ...
   <properties>
     <spring-cloud-contract.version>2.0.2.BUILD-SNAPSHOT</spring-cloud-contract.version>
   </properties>
 
-  <plugin>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-      <version>${spring-cloud-contract.version}</version>
-      <extensions>true</extensions>
-      <configuration>
-        <baseClassForTests>c.s.producer.controller.HelloControllerBase</baseClassForTests>
-      </configuration>
-    </plugin>
+  <build>
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-contract-maven-plugin</artifactId>
+        <version>${spring-cloud-contract.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <baseClassForTests>c.s.producer.controller.HelloControllerBase</baseClassForTests>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 ```
 
 ### 流程2 -- 生产者
